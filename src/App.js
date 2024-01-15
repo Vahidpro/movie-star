@@ -236,6 +236,7 @@ function Movie({ movie, onSelectMovie }) {
 function MovieDetails({ selectedId, onCloseMovie, onAddWatched }) {
 	const [movie, setMovie] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
+	const [userRating, setUserRating] = useState("");
 
 	const {
 		Title: title,
@@ -317,13 +318,17 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched }) {
 								<StarRating
 									maxRating={10}
 									size={24}
+									onSetRating={setUserRating}
 								/>
-								<button
-									className="btn-add"
-									onClick={handleAdd}
-								>
-									+ Add to list
-								</button>
+
+								{userRating > 0 && (
+									<button
+										className="btn-add"
+										onClick={handleAdd}
+									>
+										+ Add to list
+									</button>
+								)}
 							</>
 							: (
 							<p>
