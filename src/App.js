@@ -381,7 +381,7 @@ function WatchedMoviesList({ watched }) {
 						src={movie.poster}
 						alt={`${movie.Title} poster`}
 					/>
-					<h3>{movie.pitle}</h3>
+					<h3>{movie.title}</h3>
 					<div>
 						<p>
 							<span>⭐️</span>
